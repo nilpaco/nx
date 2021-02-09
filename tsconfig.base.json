@@ -14,7 +14,12 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nuvolar/scheduling/timeline": ["libs/scheduling/timeline/src/index.ts"],
+      "@nuvolar/scheduling/create-trip": [
+        "libs/scheduling/create-trip/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

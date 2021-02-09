@@ -145,6 +145,56 @@
           }
         }
       }
+    },
+    "scheduling-timeline": {
+      "projectType": "library",
+      "root": "libs/scheduling/timeline",
+      "sourceRoot": "libs/scheduling/timeline/src",
+      "prefix": "nuvolar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/scheduling/timeline/src/**/*.ts",
+              "libs/scheduling/timeline/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/scheduling/timeline"],
+          "options": {
+            "jestConfig": "libs/scheduling/timeline/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "scheduling-create-trip": {
+      "projectType": "library",
+      "root": "libs/scheduling/create-trip",
+      "sourceRoot": "libs/scheduling/create-trip/src",
+      "prefix": "nuvolar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/scheduling/create-trip/src/**/*.ts",
+              "libs/scheduling/create-trip/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/scheduling/create-trip"],
+          "options": {
+            "jestConfig": "libs/scheduling/create-trip/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }

@@ -20,6 +20,8 @@
     "fos-scheduling-engine-e2e": {
       "tags": [],
       "implicitDependencies": ["fos-scheduling-engine"]
-    }
+    },
+    "scheduling-timeline": { "tags": ["scope:scheduling", "type:feature"] },
+    "scheduling-create-trip": { "tags": ["scope:scheduling", "type:feature"] }
   }
 }
