@@ -18,7 +18,8 @@
       "@nuvolar/scheduling/timeline": ["libs/scheduling/timeline/src/index.ts"],
       "@nuvolar/scheduling/create-trip": [
         "libs/scheduling/create-trip/src/index.ts"
-      ]
+      ],
+      "@nuvolar/scheduling/ui": ["libs/scheduling/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

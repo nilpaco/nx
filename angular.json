@@ -195,6 +195,31 @@
           }
         }
       }
+    },
+    "scheduling-ui": {
+      "projectType": "library",
+      "root": "libs/scheduling/ui",
+      "sourceRoot": "libs/scheduling/ui/src",
+      "prefix": "nuvolar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/scheduling/ui/src/**/*.ts",
+              "libs/scheduling/ui/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/scheduling/ui"],
+          "options": {
+            "jestConfig": "libs/scheduling/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
