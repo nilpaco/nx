@@ -37,6 +37,14 @@
               {
                 "sourceTag": "type:app",
                 "onlyDependOnLibsWithTags": ["type:feature", "type:ui"]
+              },
+              {
+                "sourceTag": "scope:scheduling",
+                "onlyDependOnLibsWithTags": ["scope:scheduling", "scope:shared"]
+              },
+              {
+                "sourceTag": "scope:shared",
+                "onlyDependOnLibsWithTags": ["scope:shared"]
               }
             ]
           }
