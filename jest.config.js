@@ -4,5 +4,6 @@ module.exports = {
     '<rootDir>/libs/scheduling/timeline',
     '<rootDir>/libs/scheduling/create-trip',
     '<rootDir>/libs/scheduling/ui',
+    '<rootDir>/apps/portal',
   ],
 };

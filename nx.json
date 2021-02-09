@@ -23,6 +23,8 @@
     },
     "scheduling-timeline": { "tags": ["scope:scheduling", "type:feature"] },
     "scheduling-create-trip": { "tags": ["scope:scheduling", "type:feature"] },
-    "scheduling-ui": { "tags": ["scope:scheduling", "type:ui"] }
+    "scheduling-ui": { "tags": ["scope:scheduling", "type:ui"] },
+    "portal": { "tags": ["scope:portal", "type:app"] },
+    "portal-e2e": { "tags": [], "implicitDependencies": ["portal"] }
   }
 }
