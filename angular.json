@@ -331,6 +331,31 @@
           }
         }
       }
+    },
+    "shared-filter": {
+      "projectType": "library",
+      "root": "libs/shared/filter",
+      "sourceRoot": "libs/shared/filter/src",
+      "prefix": "nuvolar",
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/filter/src/**/*.ts",
+              "libs/shared/filter/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/filter"],
+          "options": {
+            "jestConfig": "libs/shared/filter/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   }
 }
