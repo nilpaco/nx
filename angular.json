@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular": {
+      "application": {
+        "linter": "eslint"
+      },
+      "library": {
+        "linter": "eslint"
+      },
+      "storybook-configuration": {
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "style": "scss",
+      "linter": "eslint",
+      "unitTestRunner": "jest"
+    },
+    "@nrwl/angular:component": {
+      "style": "scss"
+    }
+  },
+  "defaultProject": "fos-scheduling-engine",
+  "projects": {
+    "fos-scheduling-engine": {
+      "projectType": "application",
+      "root": "apps/fos-scheduling-engine",
+      "sourceRoot": "apps/fos-scheduling-engine/src",
+      "prefix": "nuvolar",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/fos-scheduling-engine",
+            "index": "apps/fos-scheduling-engine/src/index.html",
+            "main": "apps/fos-scheduling-engine/src/main.ts",
+            "polyfills": "apps/fos-scheduling-engine/src/polyfills.ts",
+            "tsConfig": "apps/fos-scheduling-engine/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/fos-scheduling-engine/src/favicon.ico",
+              "apps/fos-scheduling-engine/src/assets"
+            ],
+            "styles": ["apps/fos-scheduling-engine/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/fos-scheduling-engine/src/environments/environment.ts",
+                  "with": "apps/fos-scheduling-engine/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "fos-scheduling-engine:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "fos-scheduling-engine:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "fos-scheduling-engine:build"
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/fos-scheduling-engine/src/**/*.ts",
+              "apps/fos-scheduling-engine/src/**/*.html"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/fos-scheduling-engine"],
+          "options": {
+            "jestConfig": "apps/fos-scheduling-engine/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "fos-scheduling-engine-e2e": {
+      "root": "apps/fos-scheduling-engine-e2e",
+      "sourceRoot": "apps/fos-scheduling-engine-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/fos-scheduling-engine-e2e/cypress.json",
+            "tsConfig": "apps/fos-scheduling-engine-e2e/tsconfig.e2e.json",
+            "devServerTarget": "fos-scheduling-engine:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "fos-scheduling-engine:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["apps/fos-scheduling-engine-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    }
+  }
+}
